@@ -1,0 +1,125 @@
+.venv
+.venv_py312
+
+.DS_Store
+
+logs
+exps
+
+__pycache__
+*.pyc
+*.log
+
+stan24sgllm.egg-info
+
+ckpts
+checkpoints
+outputs
+output
+results
+wandb
+runs
+.vscode/
+
+# Environment / secrets
+.env
+*.env
+
+# Compressed / large archive files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# Model weights
+model/
+*.pth
+*.pt
+*.ckpt
+*.bin
+*.safetensors
+
+# Existing data ignores
+data/3D-FRONT-martin-rooms-stage-3.zip
+data/3D-FRONT-martin-rooms-stage-3
+data/front3d-room_meshes
+data/3D-FUTURE-assets
+data/3D-FRONT-martin-rooms-stage-2-dedup
+data/3D-FRONT-martin-rooms-stage-1
+data/3D-FRONT.zip
+data/3D-FUTURE-assets.old
+data/3D-FRONT
+
+# Large metadata
+data/metadata/model_info_3dfuture_assets_embeds.pickle
+
+# Eval generated files
+eval/viz/
+eval/gen/
+eval/samples
+eval/cache-viz.zip
+
+eval/baselines/ATISS/preprocessing*/
+eval/baselines/ATISS/train*/
+eval/baselines/ATISS/render/
+
+eval/baselines/mi-diff/MiDiffusion/train-*
+eval/baselines/mi-diff/ThreedFront/preprocessing-*
+
+eval/interactive/
+
+# Dataset folders
+dataset-ssr3dfront/
+
+# Large history files
+history/v13_sft_multimodal_llava_2img.json
+history/v14_think_move_prompt_sft.json
+history/v13_sft_scenes_growth.jsonl
+history/M3DLayout_json/
+history/v13_sft_multimodal.json
+history/v13_sft_multimodal_qwen3vl.json
+history/v13_sft_multimodal_llava_2img_fixed.json
+history/v13_sft_multimodal_llava.json
+
+# Large training data files
+training_data/v15_history_diag_annotated_llava.json
+__MACOSX/
+
+# Mac archive junk
+__MACOSX/
+
+# Large / generated research data
+data/
+dataset/
+training_data/
+history/
+scenes/
+scenes_SSR_v2_with_scale/
+scenes_degraded/
+scenes_hash2_with_cat/
+evaluate_date/
+
+# Generated benchmark/evaluation outputs
+benchmark/generated/
+*.faiss
+*.index
+*.pkl
+*.pickle
+
+# Too many generated group json files
+group_mining_outputs_fine/scene_groups/
+
+# Frontend copied public datasets/assets
+src/frontend/public/3D-FRONT-martin-full
+src/frontend/public/3D-FRONT-martin-rooms
+src/frontend/public/3D-FUTURE-assets
+src/frontend/public/sampled
+
+# 3D asset binaries
+*.glb
+*.obj
+*.mtl
+*.png
+
+# Mac archive junk
+__MACOSX/
