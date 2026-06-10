@@ -35,7 +35,7 @@ ScenePilot addresses these issues through three main components:
 ## Pipeline
 
 <p align="center">
-  <img src="docs/figures/pipeline.svg" alt="ScenePilot Pipeline" width="900">
+  <img src="assets/pipeline.svg" alt="ScenePilot Pipeline" width="900">
 </p>
 
 ## Method
