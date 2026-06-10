@@ -34,27 +34,9 @@ ScenePilot addresses these issues through three main components:
 
 ## Pipeline
 
-```text
-Input Text Prompt
-       |
-       v
-Retrieval-Augmented Prior Grounding
-       |
-       v
-Group-wise Object Planning
-       |
-       v
-Progressive Scene Growth
-       |
-       v
-Simple Deterministic Optimizer
-       |
-       v
-VLM-based Final Repair
-       |
-       v
-Final 3D Indoor Scene
-```
+<p align="center">
+  <img src="docs/figures/pipeline.svg" alt="ScenePilot Pipeline" width="900">
+</p>
 
 ## Method
 
