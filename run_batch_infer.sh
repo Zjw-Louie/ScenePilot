@@ -46,7 +46,7 @@ LOCAL_VLM_DTYPE="bfloat16"
 
 # API / model (only needed by non-vanilla presets)
 YUNWU_AI_API_BASE="https://yunwu.ai"
-YUNWU_AI_API_KEY="sk-3PxZML90syfHtBF9PP6gFdG0GGwyUV97hJZ6iIKTwApAvwib"
+YUNWU_AI_API_KEY="your-key"
 MOVE_PROMPT_MODEL="$LOCAL_VLM_MODEL"
 YUNWU_AI_MODEL="$LOCAL_VLM_MODEL"
 # MOVE_PROMPT_MODEL="gpt-5.2"
