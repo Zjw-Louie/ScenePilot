@@ -26,7 +26,7 @@ PYTHON_BIN="python"
 CUDA_DEVICES="1,2,3"
 
 # Enhanced inference entry (used by vlm_only / rag_only / rag_group / rag_group_vlm)
-PY_ENHANCED_SCRIPT="/home2/zhangjiawei/respace/infer_v15.py"  # replace this path if your sanitized infer has another filename
+PY_ENHANCED_SCRIPT="/home2/zhangjiawei/respace/infer.py"  # replace this path if your sanitized infer has another filename
 
 # Input benchmark / empty scenes
 IN_JSONL="/home2/zhangjiawei/respace/benchmark/sample_benchmark_by_ratio_vlm.jsonl"
