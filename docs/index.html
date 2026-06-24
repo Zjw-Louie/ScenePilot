@@ -3,518 +3,543 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="title" content="ScenePilot: Retrieval-Augmented and Reinforcement-Guided 3D Indoor Scene Generation">
+  <meta name="description" content="ScenePilot generates physically plausible and semantically coherent 3D indoor scenes from text using retrieval-augmented planning, group-wise growth, and multimodal repair.">
+  <meta name="keywords" content="3D scene generation, text-to-scene, indoor scene synthesis, retrieval augmented generation, vision-language model, reinforcement learning, scene layout, embodied AI">
+  <meta name="author" content="Jiawei Zhang, Hongsong Wang, Pan Zhou">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
+
+  <!-- Open Graph -->
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta property="og:site_name" content="ScenePilot Project Page">
+  <meta property="og:title" content="ScenePilot: Retrieval-Augmented and Reinforcement-Guided 3D Indoor Scene Generation">
+  <meta property="og:description" content="A text-driven 3D indoor scene generation framework with retrieval-augmented prior grounding, group-wise autoregressive growth, and multimodal repair.">
+  <meta property="og:url" content="https://zjw-louie.github.io/ScenePilot/">
+  <meta property="og:image" content="https://zjw-louie.github.io/ScenePilot/static/images/social_preview.png">
+  <meta property="og:image:alt" content="ScenePilot project preview">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta name="twitter:title" content="ScenePilot">
+  <meta name="twitter:description" content="Retrieval-augmented and reinforcement-guided 3D indoor scene generation from text.">
+  <meta name="twitter:image" content="https://zjw-louie.github.io/ScenePilot/static/images/social_preview.png">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
+  <meta name="citation_title" content="ScenePilot: Retrieval-Augmented and Reinforcement-Guided 3D Indoor Scene Generation">
+  <meta name="citation_author" content="Zhang, Jiawei">
+  <meta name="citation_author" content="Wang, Hongsong">
+  <meta name="citation_author" content="Zhou, Pan">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="Preprint">
+  <meta name="citation_pdf_url" content="https://zjw-louie.github.io/ScenePilot/static/pdfs/paper.pdf">
+
   <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <title>ScenePilot | 3D Indoor Scene Generation</title>
 
-
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
+
+  <!-- CSS -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
   <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
-  
-  <!-- Fonts - Optimized loading -->
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+
+  <!-- JavaScript -->
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "headline": "ScenePilot: Retrieval-Augmented and Reinforcement-Guided 3D Indoor Scene Generation",
+    "description": "A text-driven 3D indoor scene generation framework with retrieval-augmented prior grounding, group-wise autoregressive growth, and multimodal repair.",
     "author": [
       {
         "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
+        "name": "Jiawei Zhang",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "Southeast University"
         }
       },
       {
         "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
+        "name": "Hongsong Wang",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "Southeast University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Pan Zhou",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Singapore Management University"
         }
       }
     ],
-    "datePublished": "2024-01-01",
+    "datePublished": "2026-01-01",
     "publisher": {
       "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
+      "name": "Preprint"
     },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
+    "url": "https://zjw-louie.github.io/ScenePilot/",
+    "image": "https://zjw-louie.github.io/ScenePilot/static/images/social_preview.png",
+    "keywords": ["3D scene generation", "text-to-scene", "retrieval augmented generation", "vision-language model", "reinforcement learning"],
     "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {
       "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
+      "@id": "https://zjw-louie.github.io/ScenePilot/"
+    }
   }
   </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
-  }
-  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .publication-title {
+      line-height: 1.18;
+      font-weight: 800;
+    }
+    .hero-subtitle {
+      max-width: 900px;
+      margin: 1rem auto 0 auto;
+      color: #4a5568;
+      font-size: 1.15rem;
+      line-height: 1.65;
+    }
+    .image-box {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f5f7fb;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    }
+    .image-box img {
+      width: 100%;
+      display: block;
+    }
+    .image-placeholder {
+      display: none;
+      padding: 4rem 2rem;
+      text-align: center;
+      color: #64748b;
+      background: linear-gradient(135deg, #f8fafc, #eef2ff);
+    }
+    .image-placeholder strong {
+      color: #1e293b;
+    }
+    .method-card {
+      height: 100%;
+      padding: 1.5rem;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+    }
+    .method-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #111827;
+    }
+    .method-card p {
+      color: #4b5563;
+      line-height: 1.65;
+    }
+    .tag-row {
+      margin-top: 1rem;
+    }
+    .tag-row .tag {
+      margin: 0.2rem;
+    }
+    .metric-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+    .metric-table th, .metric-table td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: center;
+    }
+    .metric-table th {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+    .metric-table td:first-child, .metric-table th:first-child {
+      text-align: left;
+    }
+    .note {
+      color: #64748b;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  </style>
 </head>
+
 <body>
-
-
   <!-- Scroll to Top Button -->
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+
+    <!-- Title / Hero -->
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                ScenePilot: Retrieval-Augmented and Reinforcement-Guided 3D Indoor Scene Generation
+              </h1>
+
+              <p class="hero-subtitle">
+                A text-driven 3D indoor scene generation framework that combines retrieval-augmented spatial priors,
+                group-wise autoregressive scene growth, and multimodal repair for physically plausible, semantically coherent,
+                and functionally complete layouts.
+              </p>
+
+              <div class="is-size-5 publication-authors" style="margin-top: 1.25rem;">
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+                  <a href="https://github.com/Zjw-Louie" target="_blank">Jiawei Zhang</a><sup>1</sup>
+                </span>
+                <span class="author-block">
+                  Hongsong Wang<sup>1</sup>
+                </span>
+                <span class="author-block">
+                  Pan Zhou<sup>2</sup>
+                </span>
+              </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>Southeast University</span>
+                <span class="author-block"><sup>2</sup>Singapore Management University</span>
+              </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+              <div class="column has-text-centered">
+                <div class="publication-links">
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
+                  <span class="link-block">
+                    <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                      <span>Paper Coming Soon</span>
                     </a>
                   </span>
 
-                  <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
+                    <a href="https://github.com/Zjw-Louie/ScenePilot" target="_blank"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      <span>Code</span>
+                    </a>
                   </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+
+                  <span class="link-block">
+                    <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="ai ai-arxiv"></i></span>
+                      <span>arXiv Coming Soon</span>
+                    </a>
+                  </span>
+
+                </div>
+
+                <div class="tag-row">
+                  <span class="tag is-info is-light">Text-to-Scene</span>
+                  <span class="tag is-info is-light">3D Indoor Scene Generation</span>
+                  <span class="tag is-info is-light">RAG</span>
+                  <span class="tag is-info is-light">VLM Repair</span>
+                  <span class="tag is-info is-light">Reinforcement Learning</span>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <!-- Teaser / Pipeline -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <div class="image-box">
+            <img src="static/images/pipeline.png"
+                 alt="ScenePilot pipeline overview"
+                 loading="lazy"
+                 onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+            <div class="image-placeholder">
+              <strong>Upload your pipeline figure here:</strong><br>
+              <code>docs/static/images/pipeline.png</code>
+            </div>
+          </div>
+          <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+            ScenePilot first retrieves layout priors from mined scene memory, then grows the room by functional groups,
+            and finally applies multimodal repair to refine physical validity, object relations, and functional completeness.
+          </h2>
+        </div>
+      </div>
+    </section>
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
+    <!-- Abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Text-driven 3D indoor scene generation requires a model to infer object composition, spatial arrangement,
+                and functional relationships from natural language while satisfying strict physical constraints. Existing
+                approaches often suffer from implausible layouts, missing functional groups, object collisions, and weak
+                alignment between semantic intent and geometric placement. We present <strong>ScenePilot</strong>, a
+                retrieval-augmented and reinforcement-guided framework for 3D indoor scene generation. ScenePilot mines
+                room-level and anchor-centered priors from clean scenes, retrieves relevant spatial knowledge during planning,
+                and progressively constructs scenes through group-wise autoregressive growth. After each group insertion,
+                a lightweight repair loop improves local validity, while a final vision-language repair stage produces structured
+                actions to optimize physical validity, spatial relations, and functional completeness. The resulting framework
+                enables more coherent indoor layouts under the same asset library and evaluation protocol.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
+    <!-- Method Overview -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Method Overview</h2>
+        <div class="columns">
+          <div class="column">
+            <div class="method-card">
+              <h3>1. Retrieval-Augmented Prior Grounding</h3>
+              <p>
+                ScenePilot builds a prior memory from clean indoor scenes, including room-level compositions,
+                anchor-specific group statistics, and object-anchor relations. Retrieved documents provide
+                layout-aware guidance before scene construction.
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="method-card">
+              <h3>2. Group-wise Autoregressive Growth</h3>
+              <p>
+                Instead of generating all objects in one pass, ScenePilot grows the scene by functional groups
+                such as sleeping, seating, dining, working, lighting, and decoration. Each group is inserted with
+                local context and repaired immediately.
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="method-card">
+              <h3>3. Multimodal Repair and Optimization</h3>
+              <p>
+                A vision-language repair model observes rendered views and outputs executable actions such as
+                move, rotate, and scale. The repair loop targets physical validity, relation consistency, and
+                functional completeness.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pipeline Details -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Pipeline</h2>
+        <div class="content">
+          <ol>
+            <li><strong>Prior construction:</strong> mine clean scenes to form room-level and anchor-centered spatial memory.</li>
+            <li><strong>Scene planning:</strong> retrieve relevant priors and decompose the instruction into functional groups.</li>
+            <li><strong>Progressive generation:</strong> insert each group autoregressively and apply deterministic local repair.</li>
+            <li><strong>Final visual repair:</strong> use rendered observations to produce structured layout edits.</li>
+            <li><strong>Evaluation:</strong> measure physical validity and visual-semantic quality using physics metrics and VLM/user-study scores.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qualitative Results -->
+    <section class="section">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+        <p class="has-text-centered note" style="margin-bottom: 1.5rem;">
+          Replace the placeholder images below with your rendered examples.
+        </p>
+
+        <div class="columns is-multiline">
+          <div class="column is-half">
+            <div class="image-box">
+              <img src="static/images/result_livingroom.png" alt="Living room result" loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+              <div class="image-placeholder">
+                <strong>Living Room Result</strong><br>
+                <code>docs/static/images/result_livingroom.png</code>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-half">
+            <div class="image-box">
+              <img src="static/images/result_bedroom.png" alt="Bedroom result" loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+              <div class="image-placeholder">
+                <strong>Bedroom Result</strong><br>
+                <code>docs/static/images/result_bedroom.png</code>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-half">
+            <div class="image-box">
+              <img src="static/images/result_diningroom.png" alt="Dining room result" loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+              <div class="image-placeholder">
+                <strong>Dining Room Result</strong><br>
+                <code>docs/static/images/result_diningroom.png</code>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-half">
+            <div class="image-box">
+              <img src="static/images/result_library.png" alt="Library result" loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+              <div class="image-placeholder">
+                <strong>Library Result</strong><br>
+                <code>docs/static/images/result_library.png</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Evaluation -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Evaluation</h2>
+        <div class="content">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            We evaluate generated scenes from both physical and visual-semantic perspectives. Physical metrics include
+            out-of-boundary loss, mesh-based collision loss, physical-based loss, and valid scene ratio. Visual-semantic
+            metrics include layout correctness, semantic plausibility, functional completeness, and overall quality.
+          </p>
+
+          <table class="metric-table">
+            <thead>
+              <tr>
+                <th>Metric Group</th>
+                <th>Metrics</th>
+                <th>Goal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Physics</td>
+                <td>OOB ↓, MBL ↓, PBL ↓, VR ↑</td>
+                <td>Reduce boundary violations and object collisions.</td>
+              </tr>
+              <tr>
+                <td>Visual & Semantics</td>
+                <td>LC ↑, SPA ↑, FC ↑, Overall ↑</td>
+                <td>Improve layout correctness, semantic plausibility, and functional completeness.</td>
+              </tr>
+              <tr>
+                <td>Ablation</td>
+                <td>RAG, group repair, final VLM repair</td>
+                <td>Analyze the contribution of each component.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="note" style="margin-top: 1rem;">
+            Replace this table with your final quantitative results after the paper numbers are fixed.
           </p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+    </section>
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+    <!-- BibTeX -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@article{zhang2026scenepilot,
+  title={ScenePilot: Retrieval-Augmented and Reinforcement-Guided 3D Indoor Scene Generation},
+  author={Zhang, Jiawei and Wang, Hongsong and Zhou, Pan},
+  journal={Preprint},
+  year={2026},
+  url={https://zjw-louie.github.io/ScenePilot/}
+}</code></pre>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+    </section>
 
+  </main>
 
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
+  <footer class="footer">
     <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>,
+              adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- End youtube video -->
+  </footer>
 
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+    function copyBibTeX() {
+      const code = document.getElementById('bibtex-code').innerText;
+      navigator.clipboard.writeText(code).then(function() {
+        const btn = document.querySelector('.copy-bibtex-btn .copy-text');
+        if (btn) {
+          const old = btn.textContent;
+          btn.textContent = 'Copied';
+          setTimeout(() => btn.textContent = old, 1500);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
