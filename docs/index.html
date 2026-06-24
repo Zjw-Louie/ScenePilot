@@ -210,6 +210,26 @@
     }
   </style>
 
+
+  <style>
+    .result-card {
+      height: 100%;
+    }
+    .image-box img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .prompt-text {
+      font-size: 0.95rem;
+      color: #4a4a4a;
+      background: #f8fafc;
+      border-left: 3px solid #3273dc;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -514,45 +534,32 @@
       <div class="container">
         <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
         <p class="has-text-centered note" style="margin-bottom: 1.5rem;">
-          Example generated indoor scenes from ScenePilot across different room types.
+          Example generated scenes from ScenePilot. Each case uses the same text-driven generation pipeline
+          and is shown with its original input prompt.
         </p>
 
         <div class="columns is-multiline">
           <div class="column is-half">
             <div class="result-card">
               <div class="image-box">
-                <img src="static/images/result_livingroom.png" alt="Living room result" loading="lazy"
-                     onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
-                <div class="image-placeholder">
-                  <strong>Living Room Result</strong><br>
-                  <code>docs/static/images/result_livingroom.png</code>
-                </div>
-              </div>
-              <div class="content has-text-left" style="margin-top: 0.75rem;">
-                <p>
-                  <strong>Living room.</strong> The generated layout emphasizes a coherent seating group,
-                  clear circulation space, and semantically plausible relations among sofa, table,
-                  lighting, and decorative objects.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="column is-half">
-            <div class="result-card">
-              <div class="image-box">
-                <img src="static/images/result_bedroom.png" alt="Bedroom result" loading="lazy"
+                <img src="static/images/bedroom.svg" alt="Generated modern bedroom example" loading="lazy"
                      onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
                 <div class="image-placeholder">
                   <strong>Bedroom Result</strong><br>
-                  <code>docs/static/images/result_bedroom.png</code>
+                  <code>docs/static/images/bedroom.svg</code>
                 </div>
               </div>
               <div class="content has-text-left" style="margin-top: 0.75rem;">
                 <p>
-                  <strong>Bedroom.</strong> ScenePilot retrieves bed-centered priors and grows the
-                  sleeping area with functional accessories such as nightstands, lamps, storage, and
-                  decor while keeping the room physically valid.
+                  <strong>Bedroom.</strong> The prompt asks for a modern bedroom with a single bed,
+                  two nightstands, drawer chest, TV stand, floor lamp, and pendant lamp. ScenePilot
+                  organizes the sleeping area around the bed anchor and places supporting furniture
+                  and lighting with functional consistency.
+                </p>
+                <p class="prompt-text">
+                  <strong>Prompt:</strong>
+                  <em>create a modern bedroom include a single bed, two nightstands, drawer chest,
+                  TV stand, floor lamp, pendant lamp.</em>
                 </p>
               </div>
             </div>
@@ -561,18 +568,24 @@
           <div class="column is-half">
             <div class="result-card">
               <div class="image-box">
-                <img src="static/images/result_diningroom.png" alt="Dining room result" loading="lazy"
+                <img src="static/images/livingroom1.svg" alt="Generated modern industrial laundry example" loading="lazy"
                      onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
                 <div class="image-placeholder">
-                  <strong>Dining Room Result</strong><br>
-                  <code>docs/static/images/result_diningroom.png</code>
+                  <strong>Living Room / Laundry Result 1</strong><br>
+                  <code>docs/static/images/livingroom1.svg</code>
                 </div>
               </div>
               <div class="content has-text-left" style="margin-top: 0.75rem;">
                 <p>
-                  <strong>Dining room.</strong> The method handles anchor-centered group structure,
-                  placing chairs and supporting objects around the dining table while preserving
-                  usable spacing and functional coherence.
+                  <strong>Livingroom 1.</strong> This prompt mixes laundry, dining, seating, appliance,
+                  lighting, plant, and bottle objects. ScenePilot keeps the scene controllable by
+                  decomposing the prompt into functional groups and repairing dense placements.
+                </p>
+                <p class="prompt-text">
+                  <strong>Prompt:</strong>
+                  <em>create a modern industrial laundry include vintage armchair, round dining table,
+                  four dining chairs, stainless steel refrigerator, a black washing machines, two pendant
+                  lamps, two potted plants, and a row of wine bottles.</em>
                 </p>
               </div>
             </div>
@@ -581,17 +594,51 @@
           <div class="column is-half">
             <div class="result-card">
               <div class="image-box">
-                <img src="static/images/result_library.png" alt="Library result" loading="lazy"
+                <img src="static/images/livingroom2.svg" alt="Generated modern minimalist living room example" loading="lazy"
                      onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
                 <div class="image-placeholder">
-                  <strong>Library Result</strong><br>
-                  <code>docs/static/images/result_library.png</code>
+                  <strong>Living Room Result 2</strong><br>
+                  <code>docs/static/images/livingroom2.svg</code>
                 </div>
               </div>
               <div class="content has-text-left" style="margin-top: 0.75rem;">
                 <p>
-                  <strong>Library.</strong> Retrieved priors guide reading and storage zones, while
-                  the repair stage reduces boundary violations and collisions in dense arrangements.
+                  <strong>Livingroom 2.</strong> The scene contains multiple seating objects, two coffee
+                  tables, lighting, and a TV stand. The retrieved seating-group priors help maintain
+                  plausible sofa-table-TV relations while preserving open space.
+                </p>
+                <p class="prompt-text">
+                  <strong>Prompt:</strong>
+                  <em>create a modern minimalist livingroom include dark gray three-seat sofa,
+                  black leather loveseat, modern armchair, two coffee tables, floor lamp, pendant lamp,
+                  and TV stand.</em>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-half">
+            <div class="result-card">
+              <div class="image-box">
+                <img src="static/images/livingroom3.svg" alt="Generated modern living room example" loading="lazy"
+                     onerror="if(!this.dataset.fallback){this.dataset.fallback='1'; this.src='static/images/livinfroom3.svg';}else{this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';}">
+                <div class="image-placeholder">
+                  <strong>Living Room Result 3</strong><br>
+                  <code>docs/static/images/livingroom3.svg</code><br>
+                  <small>If your uploaded file name is misspelled, this page also tries <code>livinfroom3.svg</code>.</small>
+                </div>
+              </div>
+              <div class="content has-text-left" style="margin-top: 0.75rem;">
+                <p>
+                  <strong>Livingroom 3.</strong> This prompt combines living-room seating, dining furniture,
+                  storage, appliances, and multiple lighting objects. ScenePilot uses group-wise growth
+                  and repair to reduce conflicts in this mixed-function layout.
+                </p>
+                <p class="prompt-text">
+                  <strong>Prompt:</strong>
+                  <em>create a modern living room include gray tufted sofa, striped armchair,
+                  round dining table, four dining chairs, floor lamp, chandelier, TV stand, sideboard,
+                  refrigerator, and pendant lamp.</em>
                 </p>
               </div>
             </div>
@@ -631,6 +678,11 @@
                 <td>Improve layout correctness, semantic plausibility, and functional completeness.</td>
               </tr>
               <tr>
+                <td>Human Evaluation</td>
+                <td>LC ↑, SPA ↑, FC ↑</td>
+                <td>Measure perceived layout correctness, semantic plausibility, and functional completeness.</td>
+              </tr>
+              <tr>
                 <td>Ablation</td>
                 <td>RAG, group repair, final VLM repair</td>
                 <td>Analyze the contribution of each component.</td>
@@ -638,9 +690,36 @@
             </tbody>
           </table>
 
-          <p class="note" style="margin-top: 1rem;">
-            Replace this table with your final quantitative results after the paper numbers are fixed.
-          </p>
+          <h3 class="title is-4" style="margin-top: 2rem;">Human Evaluation</h3>
+          <div class="columns is-vcentered is-variable is-6">
+            <div class="column is-two-thirds">
+              <div class="image-box">
+                <img src="static/images/human%20evaluation.png"
+                     alt="Human evaluation comparison on LC, SPA, and FC"
+                     loading="lazy"
+                     onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+                <div class="image-placeholder">
+                  <strong>Human evaluation figure:</strong><br>
+                  <code>docs/static/images/human evaluation.png</code>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <p>
+                <strong>Human preference study.</strong> We compare ScenePilot with Reason3D and ReSpace under
+                three human-rated criteria: layout correctness (<strong>LC</strong>), semantic plausibility
+                (<strong>SPA</strong>), and functional completeness (<strong>FC</strong>).
+              </p>
+              <p>
+                ScenePilot receives the highest scores across all three dimensions, indicating that the
+                retrieved functional priors and grow-and-repair strategy improve not only physical validity,
+                but also perceived semantic coherence and functional completeness.
+              </p>
+              <p class="note">
+                Higher is better. The y-axis is zoomed to highlight differences among methods.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
