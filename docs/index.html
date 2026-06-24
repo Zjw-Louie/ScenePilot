@@ -200,33 +200,56 @@
   </style>
 
   <style>
-    .result-card {
+    .qual-row {
+      margin-bottom: 2rem;
+    }
+
+    .qual-card {
       height: 100%;
     }
-    .image-box img {
+
+    .qual-image-box {
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .qual-image-box img {
       display: block;
+      width: 100%;
+      height: auto;
       margin-left: auto;
       margin-right: auto;
     }
-  </style>
 
-
-  <style>
-    .result-card {
-      height: 100%;
-    }
-    .image-box img {
-      display: block;
+    .bedroom-row .qual-card {
+      max-width: 980px;
       margin-left: auto;
       margin-right: auto;
     }
+
+    .livingroom-row .qual-image-box {
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .prompt-text {
+      margin-top: 0.8rem;
       font-size: 0.95rem;
+      line-height: 1.55;
       color: #4a4a4a;
       background: #f8fafc;
       border-left: 3px solid #3273dc;
       padding: 0.75rem 1rem;
       border-radius: 6px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .livingroom-row .qual-image-box {
+        min-height: auto;
+      }
     }
   </style>
 
@@ -534,113 +557,93 @@
       <div class="container">
         <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
         <p class="has-text-centered note" style="margin-bottom: 1.5rem;">
-          Example generated scenes from ScenePilot. Each case uses the same text-driven generation pipeline
-          and is shown with its original input prompt.
+          Example generated scenes from ScenePilot with their original input prompts.
         </p>
 
-        <div class="columns is-multiline">
-          <div class="column is-half">
-            <div class="result-card">
-              <div class="image-box">
-                <img src="static/images/bedroom.svg" alt="Generated modern bedroom example" loading="lazy"
-                     onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
-                <div class="image-placeholder">
-                  <strong>Bedroom Result</strong><br>
-                  <code>docs/static/images/bedroom.svg</code>
-                </div>
-              </div>
-              <div class="content has-text-left" style="margin-top: 0.75rem;">
-                <p>
-                  <strong>Bedroom.</strong> The prompt asks for a modern bedroom with a single bed,
-                  two nightstands, drawer chest, TV stand, floor lamp, and pendant lamp. ScenePilot
-                  organizes the sleeping area around the bed anchor and places supporting furniture
-                  and lighting with functional consistency.
-                </p>
-                <p class="prompt-text">
-                  <strong>Prompt:</strong>
-                  <em>create a modern bedroom include a single bed, two nightstands, drawer chest,
-                  TV stand, floor lamp, pendant lamp.</em>
-                </p>
+        <!-- Bedroom: one full row -->
+        <div class="qual-row bedroom-row">
+          <div class="qual-card">
+            <div class="image-box qual-image-box">
+              <img src="static/images/bedroom.svg"
+                   alt="Generated modern bedroom example"
+                   loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+              <div class="image-placeholder">
+                <strong>Bedroom Result</strong><br>
+                <code>docs/static/images/bedroom.svg</code>
               </div>
             </div>
+            <p class="prompt-text">
+              <strong>Prompt:</strong>
+              <em>create a modern bedroom include a single bed, two nightstands, drawer chest,
+              TV stand, floor lamp, pendant lamp.</em>
+            </p>
           </div>
+        </div>
 
-          <div class="column is-half">
-            <div class="result-card">
-              <div class="image-box">
-                <img src="static/images/livingroom1.svg" alt="Generated modern industrial laundry example" loading="lazy"
+        <!-- Living rooms: three examples in one row -->
+        <div class="columns is-variable is-4 livingroom-row">
+          <div class="column">
+            <div class="qual-card">
+              <div class="image-box qual-image-box">
+                <img src="static/images/livingroom1.svg"
+                     alt="Generated modern industrial laundry example"
+                     loading="lazy"
                      onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
                 <div class="image-placeholder">
                   <strong>Living Room / Laundry Result 1</strong><br>
                   <code>docs/static/images/livingroom1.svg</code>
                 </div>
               </div>
-              <div class="content has-text-left" style="margin-top: 0.75rem;">
-                <p>
-                  <strong>Livingroom 1.</strong> This prompt mixes laundry, dining, seating, appliance,
-                  lighting, plant, and bottle objects. ScenePilot keeps the scene controllable by
-                  decomposing the prompt into functional groups and repairing dense placements.
-                </p>
-                <p class="prompt-text">
-                  <strong>Prompt:</strong>
-                  <em>create a modern industrial laundry include vintage armchair, round dining table,
-                  four dining chairs, stainless steel refrigerator, a black washing machines, two pendant
-                  lamps, two potted plants, and a row of wine bottles.</em>
-                </p>
-              </div>
+              <p class="prompt-text">
+                <strong>Prompt:</strong>
+                <em>create a modern industrial laundry include vintage armchair, round dining table,
+                four dining chairs, stainless steel refrigerator, a black washing machines, two pendant
+                lamps, two potted plants, and a row of wine bottles.</em>
+              </p>
             </div>
           </div>
 
-          <div class="column is-half">
-            <div class="result-card">
-              <div class="image-box">
-                <img src="static/images/livingroom2.svg" alt="Generated modern minimalist living room example" loading="lazy"
+          <div class="column">
+            <div class="qual-card">
+              <div class="image-box qual-image-box">
+                <img src="static/images/livingroom2.svg"
+                     alt="Generated modern minimalist living room example"
+                     loading="lazy"
                      onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
                 <div class="image-placeholder">
                   <strong>Living Room Result 2</strong><br>
                   <code>docs/static/images/livingroom2.svg</code>
                 </div>
               </div>
-              <div class="content has-text-left" style="margin-top: 0.75rem;">
-                <p>
-                  <strong>Livingroom 2.</strong> The scene contains multiple seating objects, two coffee
-                  tables, lighting, and a TV stand. The retrieved seating-group priors help maintain
-                  plausible sofa-table-TV relations while preserving open space.
-                </p>
-                <p class="prompt-text">
-                  <strong>Prompt:</strong>
-                  <em>create a modern minimalist livingroom include dark gray three-seat sofa,
-                  black leather loveseat, modern armchair, two coffee tables, floor lamp, pendant lamp,
-                  and TV stand.</em>
-                </p>
-              </div>
+              <p class="prompt-text">
+                <strong>Prompt:</strong>
+                <em>create a modern minimalist livingroom include dark gray three-seat sofa,
+                black leather loveseat, modern armchair, two coffee tables, floor lamp, pendant lamp,
+                and TV stand.</em>
+              </p>
             </div>
           </div>
 
-          <div class="column is-half">
-            <div class="result-card">
-              <div class="image-box">
-                <img src="static/images/livingroom3.svg" alt="Generated modern living room example" loading="lazy"
+          <div class="column">
+            <div class="qual-card">
+              <div class="image-box qual-image-box">
+                <img src="static/images/livingroom3.svg"
+                     alt="Generated modern living room example"
+                     loading="lazy"
                      onerror="if(!this.dataset.fallback){this.dataset.fallback='1'; this.src='static/images/livinfroom3.svg';}else{this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';}">
                 <div class="image-placeholder">
                   <strong>Living Room Result 3</strong><br>
                   <code>docs/static/images/livingroom3.svg</code><br>
-                  <small>If your uploaded file name is misspelled, this page also tries <code>livinfroom3.svg</code>.</small>
+                  <small>Fallback: <code>docs/static/images/livinfroom3.svg</code></small>
                 </div>
               </div>
-              <div class="content has-text-left" style="margin-top: 0.75rem;">
-                <p>
-                  <strong>Livingroom 3.</strong> This prompt combines living-room seating, dining furniture,
-                  storage, appliances, and multiple lighting objects. ScenePilot uses group-wise growth
-                  and repair to reduce conflicts in this mixed-function layout.
-                </p>
-                <p class="prompt-text">
-                  <strong>Prompt:</strong>
-                  <em>create a modern living room include gray tufted sofa, striped armchair,
-                  round dining table, four dining chairs, floor lamp, chandelier, TV stand, sideboard,
-                  refrigerator, and pendant lamp.</em>
-                </p>
-              </div>
+              <p class="prompt-text">
+                <strong>Prompt:</strong>
+                <em>create a modern living room include gray tufted sofa, striped armchair,
+                round dining table, four dining chairs, floor lamp, chandelier, TV stand, sideboard,
+                refrigerator, and pendant lamp.</em>
+              </p>
             </div>
           </div>
         </div>
