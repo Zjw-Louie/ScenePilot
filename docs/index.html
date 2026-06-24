@@ -198,6 +198,18 @@
       word-break: break-word;
     }
   </style>
+
+  <style>
+    .result-card {
+      height: 100%;
+    }
+    .image-box img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -283,24 +295,58 @@
       </div>
     </section>
 
+        <!-- Method Comparison -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Comparison with Existing Methods</h2>
+        <div class="image-box">
+          <img src="static/images/method-compare.svg"
+               alt="Comparison between ScenePilot and existing 3D scene generation methods"
+               loading="lazy"
+               onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+          <div class="image-placeholder">
+            <strong>Method comparison figure:</strong><br>
+            <code>docs/static/images/method-compare.svg</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Teaser / Pipeline -->
     <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body">
-          <div class="image-box">
-            <img src="static/images/pipeline.svg"
-                 alt="ScenePilot pipeline overview"
-                 loading="lazy"
-                 onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
-            <div class="image-placeholder">
-              <strong>Pipeline figure:</strong><br>
-              <code>docs/static/images/pipeline.svg</code>
+          <h2 class="title is-3 has-text-centered">ScenePilot Pipeline</h2>
+          <div class="columns is-vcentered is-variable is-6">
+            <div class="column is-two-thirds">
+              <div class="image-box">
+                <img src="static/images/pipeline.svg"
+                     alt="ScenePilot pipeline overview"
+                     loading="lazy"
+                     onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+                <div class="image-placeholder">
+                  <strong>Pipeline figure:</strong><br>
+                  <code>docs/static/images/pipeline.svg</code>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="content has-text-left">
+                <p>
+                  <strong>Overall workflow.</strong> ScenePilot follows a retrieval-augmented
+                  <em>Grow-and-Repair</em> process. It first retrieves reusable layout priors from
+                  room-, group-, and anchor-level memories, then plans functional object groups and
+                  inserts them sequentially into the room.
+                </p>
+                <p>
+                  After each group is inserted, lightweight local repair corrects immediate layout
+                  problems. Once the scene is complete, a final multimodal repair stage predicts
+                  structured <em>move&ndash;rotate&ndash;scale</em> actions from rendered views and scene state
+                  to improve physical plausibility, object relations, and functional completeness.
+                </p>
+              </div>
             </div>
           </div>
-          <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-            ScenePilot combines hierarchical retrieval-augmented planning with incremental grow-and-repair generation,
-            enabling efficient scene construction with strong physical plausibility, functional coherence, and controllability.
-          </h2>
         </div>
       </div>
     </section>
@@ -391,18 +437,37 @@
       </div>
     </section>
 
-        <!-- Data Representation -->
+            <!-- Data Representation -->
     <section class="section">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Data Representation</h2>
-        <div class="image-box">
-          <img src="static/images/data%20representation.svg"
-               alt="ScenePilot data representation"
-               loading="lazy"
-               onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
-          <div class="image-placeholder">
-            <strong>Data representation figure:</strong><br>
-            <code>docs/static/images/data representation.svg</code>
+        <div class="columns is-vcentered is-variable is-6">
+          <div class="column is-two-thirds">
+            <div class="image-box">
+              <img src="static/images/data%20representation.svg"
+                   alt="ScenePilot data representation"
+                   loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+              <div class="image-placeholder">
+                <strong>Data representation figure:</strong><br>
+                <code>docs/static/images/data representation.svg</code>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content has-text-left">
+              <p>
+                <strong>Structured scene state.</strong> ScenePilot represents each indoor scene as
+                an editable object-level layout with room geometry, object categories, sizes,
+                positions, rotations, and scale attributes.
+              </p>
+              <p>
+                This representation is compact enough for language-model planning, yet explicit
+                enough for deterministic checking and repair. It also makes the repair policy
+                directly executable: predicted actions modify concrete object fields instead of
+                producing free-form layout descriptions.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -412,37 +477,39 @@
     <section class="section hero is-light">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">SceneReverse-17k Dataset Construction</h2>
-        <div class="image-box">
-          <img src="static/images/dataset%20construction.svg"
-               alt="SceneReverse-17k dataset construction"
-               loading="lazy"
-               onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
-          <div class="image-placeholder">
-            <strong>Dataset construction figure:</strong><br>
-            <code>docs/static/images/dataset construction.svg</code>
+        <div class="columns is-vcentered is-variable is-6">
+          <div class="column is-two-thirds">
+            <div class="image-box">
+              <img src="static/images/dataset%20construction.svg"
+                   alt="SceneReverse-17k dataset construction"
+                   loading="lazy"
+                   onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+              <div class="image-placeholder">
+                <strong>Dataset construction figure:</strong><br>
+                <code>docs/static/images/dataset construction.svg</code>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content has-text-left">
+              <p>
+                <strong>Reverse repair trajectories.</strong> SceneReverse-17k is constructed by
+                starting from high-quality indoor scenes and applying controlled perturbations to
+                object position, rotation, and scale.
+              </p>
+              <p>
+                The inverse transformations are then recorded as executable rectification targets.
+                This turns static clean scenes into step-wise repair supervision, allowing the model
+                to learn how to diagnose and correct layout errors from rendered observations,
+                scene state, retrieved priors, and edit history.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Method Comparison -->
-    <section class="section">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Comparison with Existing Methods</h2>
-        <div class="image-box">
-          <img src="static/images/method-compare.svg"
-               alt="Method comparison figure"
-               loading="lazy"
-               onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
-          <div class="image-placeholder">
-            <strong>Method comparison figure:</strong><br>
-            <code>docs/static/images/method-compare.svg</code>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<!-- Qualitative Results -->
+    <!-- Qualitative Results -->
     <section class="section">
       <div class="container">
         <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
@@ -452,45 +519,80 @@
 
         <div class="columns is-multiline">
           <div class="column is-half">
-            <div class="image-box">
-              <img src="static/images/result_livingroom.png" alt="Living room result" loading="lazy"
-                   onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
-              <div class="image-placeholder">
-                <strong>Living Room Result</strong><br>
-                <code>docs/static/images/result_livingroom.png</code>
+            <div class="result-card">
+              <div class="image-box">
+                <img src="static/images/result_livingroom.png" alt="Living room result" loading="lazy"
+                     onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+                <div class="image-placeholder">
+                  <strong>Living Room Result</strong><br>
+                  <code>docs/static/images/result_livingroom.png</code>
+                </div>
+              </div>
+              <div class="content has-text-left" style="margin-top: 0.75rem;">
+                <p>
+                  <strong>Living room.</strong> The generated layout emphasizes a coherent seating group,
+                  clear circulation space, and semantically plausible relations among sofa, table,
+                  lighting, and decorative objects.
+                </p>
               </div>
             </div>
           </div>
 
           <div class="column is-half">
-            <div class="image-box">
-              <img src="static/images/result_bedroom.png" alt="Bedroom result" loading="lazy"
-                   onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
-              <div class="image-placeholder">
-                <strong>Bedroom Result</strong><br>
-                <code>docs/static/images/result_bedroom.png</code>
+            <div class="result-card">
+              <div class="image-box">
+                <img src="static/images/result_bedroom.png" alt="Bedroom result" loading="lazy"
+                     onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+                <div class="image-placeholder">
+                  <strong>Bedroom Result</strong><br>
+                  <code>docs/static/images/result_bedroom.png</code>
+                </div>
+              </div>
+              <div class="content has-text-left" style="margin-top: 0.75rem;">
+                <p>
+                  <strong>Bedroom.</strong> ScenePilot retrieves bed-centered priors and grows the
+                  sleeping area with functional accessories such as nightstands, lamps, storage, and
+                  decor while keeping the room physically valid.
+                </p>
               </div>
             </div>
           </div>
 
           <div class="column is-half">
-            <div class="image-box">
-              <img src="static/images/result_diningroom.png" alt="Dining room result" loading="lazy"
-                   onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
-              <div class="image-placeholder">
-                <strong>Dining Room Result</strong><br>
-                <code>docs/static/images/result_diningroom.png</code>
+            <div class="result-card">
+              <div class="image-box">
+                <img src="static/images/result_diningroom.png" alt="Dining room result" loading="lazy"
+                     onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+                <div class="image-placeholder">
+                  <strong>Dining Room Result</strong><br>
+                  <code>docs/static/images/result_diningroom.png</code>
+                </div>
+              </div>
+              <div class="content has-text-left" style="margin-top: 0.75rem;">
+                <p>
+                  <strong>Dining room.</strong> The method handles anchor-centered group structure,
+                  placing chairs and supporting objects around the dining table while preserving
+                  usable spacing and functional coherence.
+                </p>
               </div>
             </div>
           </div>
 
           <div class="column is-half">
-            <div class="image-box">
-              <img src="static/images/result_library.png" alt="Library result" loading="lazy"
-                   onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
-              <div class="image-placeholder">
-                <strong>Library Result</strong><br>
-                <code>docs/static/images/result_library.png</code>
+            <div class="result-card">
+              <div class="image-box">
+                <img src="static/images/result_library.png" alt="Library result" loading="lazy"
+                     onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='block';">
+                <div class="image-placeholder">
+                  <strong>Library Result</strong><br>
+                  <code>docs/static/images/result_library.png</code>
+                </div>
+              </div>
+              <div class="content has-text-left" style="margin-top: 0.75rem;">
+                <p>
+                  <strong>Library.</strong> Retrieved priors guide reading and storage zones, while
+                  the repair stage reduces boundary violations and collisions in dense arrangements.
+                </p>
               </div>
             </div>
           </div>
@@ -498,7 +600,7 @@
       </div>
     </section>
 
-    <!-- Evaluation -->
+<!-- Evaluation -->
     <section class="section hero is-light">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Evaluation</h2>
